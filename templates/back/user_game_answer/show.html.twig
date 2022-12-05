@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserGameAnswer{% endblock %}
+
+{% block body %}
+{% include 'back/partial/back_nav_bar.html.twig' %}
+    <h1>UserGameAnswer</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user_game_answer.id }}</td>
+            </tr>
+            <tr>
+                <th>Good</th>
+                <td>{{ user_game_answer.good ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>DelayAnswer</th>
+                <td>{{ user_game_answer.delayAnswer }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_user_game_answer_index') }}">back to list</a>
+
+    <a href="{{ path('app_back_user_game_answer_edit', {'id': user_game_answer.id}) }}">edit</a>
+
+    {{ include('back/user_game_answer/_delete_form.html.twig') }}
+{% endblock %}

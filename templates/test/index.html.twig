@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController for triviaApiFooder feature!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+    <style>
+        table, th, td {
+            border: 1px solid;
+            font-size: 9px;
+            place-content: start ;
+
+        }
+        body {
+            background-color:dimgrey ;
+        }
+        p {
+            color: white;
+        }
+        h1 {
+            color: darkslategrey;
+            background-color: lightpink;
+        }
+        h3 {
+           color: darkorange;
+            background-color: darkslategrey;
+        }
+    </style>
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }} for ApiFooder feature! ✅</h1>
+
+    <h3>This friendly message is coming from yoyo:</h3>
+   <!-- <a href="{{ path('app_back_user_game_answer_index') }}">back to list</a>-->
+
+    <table>
+    <p class="txt-center m1-txt1 p-t-33 p-b-68">
+        {% for element in jsonArray %}
+            <tr>
+                <td><b style="color:blue;background-color:lightcoral;">Question</b> <p>{{ jsonArray[loop.index-1]["question"] }}</p></td>
+                <td><b style="color:green;background-color:pink;">Category</b>  <p>{{ jsonArray[loop.index-1]["category"] }}</p></td>
+                <td><b style="color:red;background-color:limegreen;">Difficulty</b> <p>{{ jsonArray[loop.index-1]["difficulty"] }}</p></td>
+                <td><b style="color:darkorange; background-color:white;">goodAnswer</b><br> <p>{{ jsonArray[loop.index-1]["correctAnswer"] }}</p></td>
+                {% for truc in jsonArray[loop.index-1]["incorrectAnswers"] %}
+                    <td><b style="color:violet;background-color:black;">badAnswer</b> <p>{{ truc }}</p></td>
+                {% endfor %}
+                {% for truc in jsonArray[loop.index-1]["tags"] %}
+                    <td><b style="color:yellow; background-color:darkred;">Tag</b> <p>{{ truc }}</p></td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    </p>
+</div>
+{% endblock %}

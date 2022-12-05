@@ -1,0 +1,86 @@
+
+        <!-- Nav -->
+        <nav class="navbar navbar-expand-lg back_nav navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a href="{{ path('app_back_question_answer_index') }}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
+                    <img src="{{ asset('favicon.png') }}" height="50" alt="Logo O'flix">
+                    <span class="header-logo__title text-uppercase mx-3" style="color: #dc3545;">Back Réponse D</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+                        <li class="nav-item">
+                            <a class="nav-link {% if app.request.get('_route') in ['app_back_question_index','app_back_question_new','app_back_question_show','app_back_question_edit'] %} active {% endif %}" href="{{ path('app_back_question_index') }}">Question</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if 'app_back_answer' in app.request.get('_route')%}active{% endif %}" href="{{ path('app_back_answer_index') }}"><i class="bi bi-film"></i>Réponse</a>
+                        </li>
+
+                    
+                        <li class="nav-item">
+                            <a class="nav-link {% if 'app_back_game' in app.request.get('_route')%}active{% endif %}" href="{{ path('app_back_game_index') }}">Jeu</a>
+                        </li>
+                    
+                        
+                        <li class="nav-item">
+                            <a class="nav-link {% if 'app_back_level' in app.request.get('_route')%}active{% endif %}" href="{{ path('app_back_level_index') }}"><i class="bi bi-bookmark"></i>Difficulté</a>
+                        </li>
+                        
+                        
+                        <li class="nav-item">
+                            <a class="nav-link {% if 'app_back_category' in app.request.get('_route')%}active{% endif %}" href="{{ path('app_back_category_index') }}"><i class="bi bi-bookmark"></i>Catégorie</a>
+                        </li>
+                    
+                        
+                        <li class="nav-item">
+                            <a class="nav-link {% if app.request.get('_route') starts with 'app_back_question_answer' %}active{% endif %}" href="{{ path('app_back_question_answer_index') }}"><i class="bi bi-bookmark"></i>QuestionRéponse</a>
+                        </li>
+                    
+                        
+                        <li class="nav-item">
+                            <a class="nav-link {% if 'app_back_user_game_answer' in app.request.get('_route')%}active{% endif %}" href="{{ path('app_back_user_game_answer_index') }}"><i class="bi bi-bookmark"></i>UserJeuRéponse</a>
+                        </li>
+                    
+                        
+                        <li class="nav-item">
+                            <a class="nav-link {% if 'app_back_user' in app.request.get('_route')%}active{% endif %}" href="{{ path('app_back_user_index') }}"><i class="bi bi-bookmark"></i>Membre</a>
+                        </li>
+                    
+                       
+                    </ul>
+                    
+                            {# {% if app.user == null %}
+                                <a href="{{ path('app_login')}}" class="btn btn-danger me-2">Connexion</a>
+                            {% else %}
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown">
+                                    <span>{{ app.user.email }}</span>
+                                    <i class="bi bi-person-square"></i>
+                                </a>
+                                
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{ path('app_back_movie_index') }}">Backoffice</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ path('app_logout')}}">Déconnexion</a></li>
+                                </ul>
+                            </li>
+                            {% endif %}
+
+
+                    </ul> #}
+
+                    
+
+                    {# <form class="d-flex" action="list.html">
+                        <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="Rechercher...">
+                        <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button>
+                    </form> #}
+                </div>
+            </div>
+        </nav>

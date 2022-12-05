@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New QuestionAnswer{% endblock %}
+
+{% block body %}
+{% include 'back/partial/back_nav_bar.html.twig' %}
+    <h1>Create new QuestionAnswer</h1>
+
+    {{ include('back/question_answer/_form.html.twig') }}
+
+    <a href="{{ path('app_back_question_answer_index') }}">back to list</a>
+{% endblock %}
